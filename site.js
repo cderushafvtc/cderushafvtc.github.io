@@ -64,3 +64,5 @@ document.querySelector('#next').addEventListener('click', () => {
     currentImage++
     showImages()
 })
+
+
