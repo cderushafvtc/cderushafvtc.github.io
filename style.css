@@ -111,3 +111,13 @@ footer {
     text-align: center;
     min-height: 10vh;
 }
+
+.pokemon-ctr {
+    display: flex;
+    justify-content: center;
+}
+
+.pokemon-ctr img {
+    width: 250px;
+    image-rendering: pixelated;
+}

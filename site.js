@@ -24,6 +24,29 @@ if (isMorning) {
     greeting.textContent = "Good Evening! Welcome to my website."
 }
 
+// Random Pokémon
+
+const getJsonFrom = url => fetch(url).then(response => response.json())
+
+const getRandomPokemon = async () => {
+    const url = 'https://pokeapi.co/api/v2/pokemon/' + Math.floor(Math.random() * 150)
+    const json = await getJsonFrom(url)
+    return json
+}
+
+const renderPokemon = pokemonObj => {
+    const container = document.querySelector('.pokemon-ctr')
+    const img = document.createElement('img')
+    img.src = pokemonObj.sprites.front_default
+    img.alt = pokemonObj.name
+    container.append(img)
+    return pokemonObj
+}
+
+(async () => {
+    const pokemon = await getRandomPokemon()
+    renderPokemon(pokemon)
+})()
 
 // Carousel
 const urls = [
